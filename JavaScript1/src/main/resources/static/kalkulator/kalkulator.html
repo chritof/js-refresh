@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script defer src="kalkulator.js"></script>
+  <style>
+    .hidden {
+      display: none;
+    }
+    .hidden { display: none; }
+
+    #kalkuleringer {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 12px;
+      border: 1px solid #ddd;
+      padding: 12px;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+
+    .calc-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr auto auto auto;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .kalkInput {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .ops { display: flex; gap: 6px; }
+
+    .op-btn, .eq-btn {
+      padding: 6px 10px;
+      border: 1px solid #bbb;
+      border-radius: 6px;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .op-btn.active { outline: 2px solid #4a90e2; }
+
+    .resultat {
+      min-width: 120px;
+      padding: 6px 10px;
+      background: #fff;
+      border: 1px dashed #bbb;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+
+<fieldset id="felt1">
+  <legend>Kalkulator</legend>
+  <p>Hvor mange utregninger vil du gjøre:</p>
+  <input type="number" placeholder="Antall utregninger" id="input" min="1">
+  <button type="button" id="button1">Utfør!</button>
+
+  <div id="kalkuleringer"></div>
+</fieldset>
+</body>
+</html>

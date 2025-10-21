@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <script defer src="converter.js"></script>
+  <title>Title</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <fieldset id="root">
+    <legend>Degree converter</legend>
+    <select name="degree" id="degree">
+      <option value="celsius">Celsius</option>
+      <option value="farenheit">Fahrenheit.</option>
+    </select>
+    <input type="number" name="degree" id="input" placeholder="skriv inn grader i Fahrenheit.">
+    <button type="submit">Converter</button>
+    <p class="hidden"><span></span></p>
+  </fieldset>
+</body>
+</html>
