@@ -14,7 +14,7 @@ pushBtn.addEventListener('click', () => {
         return;
     }
     stack.push(value);
-    input.value = '';        
+    input.value = '';
     output.textContent = `Pushet: "${value}" (lengde: ${stack.length})`;
 });
 

@@ -15,16 +15,12 @@ function antallUtregninger() {
         return;
     }
 
-    // Tøm før ny generering
     kalkuleringer.innerHTML = "";
-    const frag = document.createDocumentFragment();
-
     for (let i = 0; i < antall; i++) {
-        frag.appendChild(lagRad(i + 1));
+        const rad = lagRad(i + 1);
+        kalkuleringer.appendChild(rad);
     }
-
-    kalkuleringer.appendChild(frag);
-}
+    }
 
 function lagRad(nr) {
     const row = document.createElement("div");
@@ -55,7 +51,7 @@ function lagRad(nr) {
         btn.className = "op-btn";
         btn.textContent = sym;
         btn.addEventListener("click", () => {
-            // marker aktiv knapp
+            // uten denne vil knappen være aktiv for alltid etter du først har klikket på den!
             [...ops.children].forEach(el => el.classList.remove("active"));
             btn.classList.add("active");
             valgtOp = sym;
@@ -99,7 +95,6 @@ function lagRad(nr) {
             default: out = "Feil op";
         }
 
-        // Pen formatering
         res.textContent = Number.isFinite(out) ? formatNumber(out) : "Ugyldig";
     });
 
