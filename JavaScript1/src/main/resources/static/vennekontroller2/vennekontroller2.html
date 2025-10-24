@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script defer src="vennekontroller2.js"></script>
+</head>
+<body>
+
+<fieldset id="registrering">
+  <legend>Registrer venn</legend>
+  <label for="navn">Navn:</label>
+  <input type="text" size="20" id="navn">
+  <label for="alder">Alder (0-110):</label>
+  <input type="number" id="alder" min="0" max="110">
+  <button type="button">Registrer</button>
+</fieldset>
+
+<fieldset id="visning">
+  <legend>Mine venner i <span></span></legend>
+  <table>
+    <thead><tr><th>Alder</th><th>Navn</th></tr></thead>
+    <tbody></tbody>
+  </table>
+</fieldset>
+
+
+</body>
+</html>
