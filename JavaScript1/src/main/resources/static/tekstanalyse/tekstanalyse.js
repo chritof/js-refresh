@@ -5,8 +5,7 @@ class TekstAnalyse{
     #tekst
     #liste = [];
     constructor(){}
-
-
+    
     set tekst(tekst){
         this.#tekst = tekst;
     }
