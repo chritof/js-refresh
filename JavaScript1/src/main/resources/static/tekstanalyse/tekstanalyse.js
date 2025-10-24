@@ -3,6 +3,7 @@ console.log("tekstanalyse:] ---(online...)")
 class TekstAnalyse{
 
     #tekst
+    #liste = [];
     constructor(){}
 
 
@@ -10,4 +11,7 @@ class TekstAnalyse{
         this.#tekst = tekst;
     }
 
+    get liste(){
+        return this.#liste;
+    }
 }
