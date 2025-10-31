@@ -28,14 +28,24 @@ class Tester extends HTMLElement {
     #allCallbacks() {
         this.#callbacks.forEach(callback => callback());
     }
+
+    deletetCallback(callbackid){
+        if (this.#callbacks.has(callbackid)) {
+            this.#callbacks.delete(callbackid);
+        }
+    }
 }
 customElements.define('test-er', Tester);
 
 const sl = document.getElementById('2');
-sl.addCallback(() => {
+const testerMessage = sl.addCallback(() => {
     console.log('tester');
 })
-
-sl.addCallback(() => {
+const loremMessage = sl.addCallback(() => {
     console.log('lorem ipsum');
 })
+
+//dette vil slette callback basert på iden som blir laget med symbol i addCallback metoden
+//sl.deletetCallback(loremMessage);
+
+
