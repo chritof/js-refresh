@@ -1,0 +1,67 @@
+In this task you are asked to write the JavaScript code of a GUI component ShoppingList that can
+ manage the display of a shopping list.
+ This component is part of a web application where the user also can add items to the shopping list,
+ and the shopping items can be e.g. stored in a database on the web server. This task though is
+ concerned only with display of the shopping list.
+ const result = await storagemanager.remove(id);
+ Code snippet 3: Code of web application
+
+The ShoppingList component is based on the following HTML templates:
+The illustration below shows a possible view of the ShoppingList component.
+Figure 1: The ShoppingList component
+An item on the shopping list is represented as an object with the following properties:
+• id: Integer, a unique identifier of the shopping item
+• name: String, the name of the item
+• amount: String, the amount of item
+• deadline: Date, deadline to fulfil shopping of the item
+As an example, the shopping item Bananas in Figure 1 can be represented by the following object:
+const template = document.createElement("template");
+template.innerHTML = `
+<table id="shoppinglist">
+<thead>
+<tr><th>Item</th><th>Amount</th><th>Deadline</th></tr>
+</thead>
+<tbody></tbody>
+</table>`;
+Code snippet 5: Template for an HTML table row of a shopping
+const itemrow = document.createElement("template");
+itemrow.innerHTML = `
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><button type="button">Remove</button></td>
+</tr>`;
+
+const bananas = {
+"id": 1,
+"name": "Bananas",
+"amount": "2 kg",
+"deadline": new Date(2024,10,30,12,23)
+};
+const deadlineText = item.deadline.toLocaleDateString(
+navigator.language,
+{ weekday: "long", dayPeriod: "long" }
+);
+Code snippet 6: Object representing the shopping item Bananas
+Code snippet 7: Text with Weekday and day period for deadline of item
+shoppinglist.additem(bananas);
+Code snippet 8: Adding shopping item for Bananas to the display
+shoppinglist.removeitem(1);
+Code snippet 9: Removing item with id "1" from the display
+Page 21 of 26
+• addremoveitemcallback(callback): The method will add a callback that is run when the
+user clicks a button Remove of ShoppingList, see Figure 1.
+This method does not update the view.
+Parameters:
+o In parameter: Function
+o Return value: Not required
+The method can return a value to identify the callback, but that is not required.
+When callback is run on a click at a button Remove, the callback must be run with the
+unique identifier id of the shopping item as argument.
+The callback can be used e.g. to remove a shopping item from a database on the server.
+Only if the item was successfully removed should the item be removed from the display
+using the removeitem public method.
+The HTML element class ShoppingList includes the HTML template code of Code snippet 5,
+Code snippet 4 and the JavaScript code of Code snippet 10 shown below:
+Task: Fill in the missing code Code snippet 10 above

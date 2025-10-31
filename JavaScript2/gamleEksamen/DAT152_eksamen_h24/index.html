@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <script defer src="shoppingList.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<h1>online...</h1>
+<shopping-list id="sl"></shopping-list>
+
+<script>
+    const sl = document.getElementById("sl");
+
+    // Vent til custom elementet er registrert/oppgradert
+    customElements.whenDefined('shopping-list').then(() => {
+        sl.addremoveitemcallback(async (id) => {
+            sl.removeitem(id);
+        });
+
+        sl.additem({ id: 1, name: "Milk",    amount: "5 litres", deadline: new Date(2024,10,29,9,0) });
+        sl.additem({ id: 2, name: "Bananas", amount: "2 kg",     deadline: new Date(2024,10,30,12,23) });
+        sl.additem({ id: 3, name: "Bread",   amount: "1 pcs.",   deadline: new Date(2024,11,2,15,0) });
+    });
+</script>
+</body>
+</html>
