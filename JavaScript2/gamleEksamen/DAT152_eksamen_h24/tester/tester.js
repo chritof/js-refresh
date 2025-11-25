@@ -39,7 +39,7 @@ customElements.define('test-er', Tester);
 
 const sl = document.getElementById('2');
 const testerMessage = sl.addCallback(() => {
-    console.log('tester');
+    console.log('testawdawdwer');
 })
 const loremMessage = sl.addCallback(() => {
     console.log('lorem ipsum');
