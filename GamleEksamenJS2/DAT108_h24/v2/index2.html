@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script defer src="Trafikkontroller2.js"></script>
+</head>
+<body>
+  <h1>Trafikkontroller...</h1>
+
+
+  <fieldset id="registrering">
+    <legend>Bilpassering <span></span></legend>
+    <label for="bilnummer">Registreringsnummer:</label>
+    <!--denne må hentes! -->
+    <input type="text" size="10" placeholder="Bilnummer"
+           id="bilnummer">
+    <label for="tidspunkt">Tidspunkt:</label>
+    <!--denne må hentes! -->
+    <input type="time" id="tidspunkt">
+    <button type="button">Registrer passering</button>
+  </fieldset>
+
+
+  <fieldset id="resultat">
+    <legend>Bilpasseringer</legend>
+    <div class="input">
+      <div>
+        <label for="nedregrense">Fra: </label>
+        <input type="time" id="nedregrense">
+        <label for="ovregrense">Til: </label>
+        <input type="time" id="ovregrense">
+        <button type="button">Vis passeringer</button>
+      </div>
+    </div>
+    <div>
+      <table>
+        <thead>
+        <tr><th>Bilnummer</th><th>Tidspunkt</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </fieldset>
+</body>
+</html>
