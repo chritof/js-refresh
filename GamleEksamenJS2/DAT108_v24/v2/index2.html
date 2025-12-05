@@ -3,8 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+  <script defer src="KonkurranseKontroller.js"></script>
 </head>
 <body>
+  <h1>Hello World!</h1>
+
+  <fieldset class="registrering" id="registrering">
+    <legend>Deltager registrering</legend>
+    <div>
+      <input type="text" size="20" placeholder="Navn på deltager">
+      <input type="number" size="11" placeholder="Tid i minutter">
+      <button type="button">Registrer resultat</button>
+    </div>
+  </fieldset>
+
+  <fieldset class="resultat" id="resultat">
+    <legend>Resultater</legend>
+    <div>
+      <input type="number" size="3" value="1" min="1">
+      <button>Vis deltager med plassering</button>
+    </div>
+    <p class="hidden plassering">
+      <span></span> har sluttid <span></span> minutter.
+    </p>
+    <p class="plassholder">Her skal resultatet vises.</p>
+  </fieldset>
 
 </body>
 </html>
